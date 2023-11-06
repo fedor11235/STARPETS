@@ -1,7 +1,8 @@
-import updateUser from './swagger/endpoint/update-user.js'
-import { idSheme, amountSheme } from './swagger/shemes/user.js'
+const GetUser = require('./swagger/endpoint/get-user.js')
+const updateUser = require('./swagger/endpoint/update-user.js')
+const { idSheme, amountSheme } = require('./swagger/shemes/user.js')
 
-export default {
+module.exports = {
   openapi: '3.0.0',
   info: {
     title: 'History service',
@@ -9,6 +10,7 @@ export default {
     description: 'The History API description',
   },
   paths: {
+    '/': GetUser,
     '/update/{userId}/{amount}': updateUser,
   },
   components: {

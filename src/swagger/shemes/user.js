@@ -1,7 +1,7 @@
-export const idSheme = {
+module.exports.idSheme = {
   type: "string"
 }
 
-export const amountSheme = {
+module.exports.amountSheme = {
   type: "string"
 }

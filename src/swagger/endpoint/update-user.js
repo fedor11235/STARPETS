@@ -1,6 +1,6 @@
-import { idSheme, amountSheme } from '../shemes/user.js'
+const { idSheme, amountSheme } = require('../shemes/user.js')
 
-export default {
+module.exports = {
   put: {
     tags: [],
     summary: 'обновление записи',

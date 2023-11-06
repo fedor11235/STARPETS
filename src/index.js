@@ -1,13 +1,11 @@
-import express from 'express'
-import db from "./models"
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import swaggerUi from 'swagger-ui-express'
-import swaggerDoc from './openapi.js';
-import 'dotenv/config'
+const express = require('express')
+const cors = require('cors')
+const db = require('../models')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDoc = require('./openapi.js')
+require('dotenv/config')
 
-import router from "./routes.js";
-
+const router =require('./routes.js')
 
 const port = process.env.PORT
 
@@ -22,7 +20,6 @@ db.sequelize.sync()
   })
   
 app.use(cors())
-app.use(bodyParser.json())
 app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 app.use(router);
 

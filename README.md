@@ -4,6 +4,8 @@
 
 Стек: JS, ExpressJS, Sequelize, Swagger
 
+Свегер работае на маршруте /api
+
 ## Установка
 
 ```bash

@@ -1,4 +1,4 @@
-import { userSheme, idSheme } from '../swagger-shemes/user.js'
+import { idSheme, amountSheme } from '../shemes/user.js'
 
 export default {
   put: {
@@ -7,21 +7,20 @@ export default {
     description: '',
     parameters: [
       {
-        name: "id",
+        name: "userId",
         in: "path",
         schema: idSheme,
         required: true,
         description: "Id of user to be updated",
       },
-    ],
-    requestBody: {
-      required: true,
-      content: {
-        'application/json': {
-          schema: userSheme
-        }
+      {
+        name: "amount",
+        in: "path",
+        schema: amountSheme,
+        required: true,
+        description: "amount of user to be updated",
       },
-    },
+    ],
     responses: {
       200: {
         description: 'user updated',

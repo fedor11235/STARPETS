@@ -1,7 +1,5 @@
-import createHistoryUser from './swagger-endpoint/create-history-user.js'
-import updateHistoryUser from './swagger-endpoint/update-history-user.js'
-import getHistoryUser from './swagger-endpoint/get-history-user.js'
-import { userSheme, idSheme } from './swagger-shemes/user.js'
+import updateUser from './swagger/endpoint/update-user.js'
+import { idSheme, amountSheme } from './swagger/shemes/user.js'
 
 export default {
   openapi: '3.0.0',
@@ -11,14 +9,12 @@ export default {
     description: 'The History API description',
   },
   paths: {
-    '/create': createHistoryUser,
-    '/update/{id}': updateHistoryUser,
-    '/get': getHistoryUser,
+    '/update/{userId}/{amount}': updateUser,
   },
   components: {
     schemas: {
-      user: userSheme,
-      id: idSheme
+      idUser: idSheme,
+      amount: amountSheme
     }
   }
 }

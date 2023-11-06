@@ -1,19 +1,17 @@
-// import db from '../models/index.js';
 const { Users } = require('../models')
 
-// const Users = db.Users;
-// const Op = db.Sequelize.Op;
-
-module.exports.getUsers = async (id, amount) => {
-  console.log(Users)
-  const users = await Users.findAll()
-  return users;
+module.exports.getUsers = async () => {
+  return await Users.findAll()
 }
 
 module.exports.updateUser = async (id, amount) => {
-  const user = await Users.update(
-    { amount: amount }, 
-    { where: { id: id }})
-
-  return user;
+  const user = await Users.findOne({ where: { id: Number(id) }})
+  const balance = user.balance - Number(amount)
+  if(balance < 0) {
+    return 'средств на балансе недостаточно'
+  }
+  await Users.update(
+    { balance: balance }, 
+    { where: { id: Number(id) }})
+  return 'с баланса успешно списаны деньги'
 }

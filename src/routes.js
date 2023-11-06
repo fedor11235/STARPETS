@@ -8,7 +8,7 @@ router.get('/', async (request, response) => {
   response.send(message)
 });
 
-router.put('/user/update/:userId/:amount', async (request, response) => {
+router.put('/update/:userId/:amount', async (request, response) => {
   const { userId, amount } = request.params
   const message = await updateUser(userId, amount)
   response.send(message)

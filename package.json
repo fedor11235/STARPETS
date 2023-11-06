@@ -1,0 +1,25 @@
+{
+  "name": "history-service",
+  "version": "0.0.1",
+  "description": "history service",
+  "author": "Exferd",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "lint": "eslint \"src/**/*.js\" --fix"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "request": "^2.88.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "nodemon": "^3.0.1"
+  }
+}
